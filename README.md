@@ -37,14 +37,18 @@ Para executar este projeto localmente, siga as instruções abaixo:
 
 2. Navegue até o diretório do projeto
 
-````bash
+```bash
  cd ToDoList
+```
 
 3. Instale as dependências
+
 ```bash
  npm i ou npm install
+```
 
 4. Execute a aplicação
-``` bash
+
+```bash
  npm run dev
-````
+```
