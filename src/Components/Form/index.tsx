@@ -6,6 +6,7 @@ import { useState } from "react";
 interface Task {
   id: number;
   description: string;
+  completed: boolean;
 }
 
 export function Form() {
@@ -17,6 +18,7 @@ export function Form() {
     const taskObject = {
       id: Math.random(),
       description: newTask,
+      completed: false,
     };
 
     setTasks([...tasks, taskObject]);
@@ -25,6 +27,18 @@ export function Form() {
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
+  }
+
+  function onDeleteTask(id: Task["id"]) {
+    const filteredTasks = tasks.filter((task) => task.id !== id);
+    setTasks(filteredTasks);
+  }
+
+  function handleToggleTaskCompletion(id: number) {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updatedTasks);
   }
 
   return (
@@ -41,7 +55,11 @@ export function Form() {
         </button>
       </form>
 
-      <Tasks tasks={tasks} />
+      <Tasks
+        onDeleteTask={onDeleteTask}
+        onToggleTaskCompletion={handleToggleTaskCompletion}
+        tasks={tasks}
+      />
     </>
   );
 }
