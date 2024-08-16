@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+#ToDO List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este é um aplicativo simples que funciona como uma lista de tarefas
+desenvolvido em React. O objetivo do projeto é permitir que os usuários
+possam adicionar, marcar como concluídas e excluir tarefas de forma intuitiva.
+É uma aplicação básica ideal para iniciantes em React ou para quem deseja
+entender os conceitos de gerenciamento de estado em aplicações de frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Criação de novas tarefas
+- Conclusão de tarefas
+- Exclusão de tarefas realizadas
+- Contador de tarefas criadas e realizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Screenshot](image.png)
 
-- Configure the top-level `parserOptions` property like this:
+## Objetivo do projeto
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+O objetivo da criação deste projeto, é por a prova os conhecimentos básicos dos
+estudos de React, como a componentização, o gerenciamento de estados, a
+renderização condicional, modularização de estilos, passagem de props por
+parâmetros de funções etc.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Instalação
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Para executar este projeto localmente, siga as instruções abaixo:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/gustabcc/ToDoList.git
+
+   ```
+
+2. Navegue até o diretório do projeto
+
+````bash
+ cd ToDoList
+
+3. Instale as dependências
+```bash
+ npm i ou npm install
+
+4. Execute a aplicação
+``` bash
+ npm run dev
+````
