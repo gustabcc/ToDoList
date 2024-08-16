@@ -1,38 +1,16 @@
 import { Trash } from "phosphor-react";
 import styles from "./NewTask.module.css";
+
 interface Task {
   id: number;
-  title: string;
+  description: string;
 }
 
-const tasks = [
-  {
-    id: 1,
-    title: "Estudar React",
-  },
-  {
-    id: 2,
-    title: "Estudar TypeScript",
-  },
-  {
-    id: 3,
-    title: "Estudar Next.js",
-  },
-  {
-    id: 4,
-    title: "Estudar React",
-  },
-  {
-    id: 5,
-    title: "Estudar React",
-  },
-  {
-    id: 6,
-    title: "Estudar React",
-  },
-];
+interface NewTaskProps {
+  tasks: Task[];
+}
 
-export function NewTask() {
+export function NewTask({ tasks }: NewTaskProps) {
   return (
     <div className={styles.taskListContainer}>
       {tasks.map((task: Task) => {
@@ -40,7 +18,7 @@ export function NewTask() {
           <div className={styles.newTask} key={task.id}>
             <div className={styles.description}>
               <input type="radio" className={styles.radioInput} />
-              <span className={styles.taskText}>{task.title}</span>
+              <span className={styles.taskText}>{task.description}</span>
             </div>
             <button className={styles.deleteButton}>
               <Trash size={20} />
